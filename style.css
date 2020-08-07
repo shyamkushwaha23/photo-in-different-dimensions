@@ -1,0 +1,98 @@
+:root {
+  --photo-size: 100px;
+  --photo-size-diff: 50px;
+  --photo-bdr-value: 0;
+  --photo-pad-value: 0;
+  --photo-ractangle-value: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html{
+  font: 12px/1.5rem Arial;
+}
+figure{
+  margin: 0;
+}
+legend {
+  font-weight: bold;
+}
+
+figure {
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+figure::before, figure::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+}
+figure::before {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid #f00;
+}
+figure::after {
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  border: 1px solid #fff;
+}
+figure img {
+  display: block;
+  position: relative;
+}
+
+figure.size-small {
+  width: var(--photo-size);
+  height: var(--photo-size);
+}
+figure.size-small img {
+  width: var(--photo-size);
+  height: var(--photo-size);
+}
+figure.size-small.shape-rectangle {
+  width: calc( var(--photo-size) - 20px );
+}
+figure.size-small.shape-rectangle img {
+  left: -10px;
+}
+
+figure.size-medium {
+  width: calc( var(--photo-size) + var(--photo-size-diff) );
+  height: calc( var(--photo-size) + var(--photo-size-diff) );
+}
+figure.size-medium img {
+  width: calc( var(--photo-size) + var(--photo-size-diff) );
+  height: calc( var(--photo-size) + var(--photo-size-diff) );
+}
+figure.size-medium.shape-rectangle {
+  width: calc( var(--photo-size) + var(--photo-size-diff) - 40px );
+}
+figure.size-medium.shape-rectangle img {
+  left: -20px;
+}
+
+figure.size-large {
+  width: calc( var(--photo-size) + var(--photo-size-diff) * 2 );
+  height: calc( var(--photo-size) + var(--photo-size-diff) * 2 );
+}
+figure.size-large img {
+  width: calc( var(--photo-size) + var(--photo-size-diff) * 2 );
+  height: calc( var(--photo-size) + var(--photo-size-diff) * 2 );
+}
+figure.size-large.shape-rectangle {
+  width: calc( var(--photo-size) + var(--photo-size-diff) * 2 - 60px );
+}
+figure.size-large.shape-rectangle img {
+  left: -30px;
+}
+
+figure.shape-circle::before, figure.shape-circle::after, figure.shape-circle img {
+  border-radius: 50%;
+}
