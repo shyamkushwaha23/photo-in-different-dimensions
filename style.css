@@ -34,7 +34,7 @@ figure::before {
   right: 0;
   bottom: 0;
   left: 0;
-  border: 1px solid #f00;
+  border: 1px solid #999;
 }
 figure::after {
   top: 1px;
@@ -47,7 +47,9 @@ figure img {
   display: block;
   position: relative;
 }
-
+figure, figure::before, figure::after, figure img {
+  transition: all .25s;
+}
 figure.size-small {
   width: var(--photo-size);
   height: var(--photo-size);
@@ -72,10 +74,10 @@ figure.size-medium img {
   height: calc( var(--photo-size) + var(--photo-size-diff) );
 }
 figure.size-medium.shape-rectangle {
-  width: calc( var(--photo-size) + var(--photo-size-diff) - 40px );
+  width: calc( var(--photo-size) + var(--photo-size-diff) - 30px );
 }
 figure.size-medium.shape-rectangle img {
-  left: -20px;
+  left: -15px;
 }
 
 figure.size-large {
@@ -87,10 +89,10 @@ figure.size-large img {
   height: calc( var(--photo-size) + var(--photo-size-diff) * 2 );
 }
 figure.size-large.shape-rectangle {
-  width: calc( var(--photo-size) + var(--photo-size-diff) * 2 - 60px );
+  width: calc( var(--photo-size) + var(--photo-size-diff) * 2 - 40px );
 }
 figure.size-large.shape-rectangle img {
-  left: -30px;
+  left: -20px;
 }
 
 figure.shape-circle::before, figure.shape-circle::after, figure.shape-circle img {
